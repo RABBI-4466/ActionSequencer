@@ -1,0 +1,43 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'rabbi4466.actionsequencer'
+version = '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifactId = 'actionsequencer'
+
+        }
+    }
+    repositories {
+        maven {
+            name = "actionsequencer" //  optional target repository name
+            url = 'https://repo.repsy.io/mvn/rabbi4466/actionsequencer/'
+            credentials {
+                username = 'rabbi4466'
+                password = project.property("repsyPass");
+            }
+        }
+    }
+
+}
+
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
