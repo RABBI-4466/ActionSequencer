@@ -7,6 +7,20 @@ with customizable wait logic and completion thresholds.
 
 ---
 
+## ⚡ Quickstart
+
+Add the following to your `build.dependencies.gradle`:
+
+### `repositories` block:
+```groovy
+maven { url = "https://repo.repsy.io/mvn/rabbi4466/actionsequencer/" }
+```
+
+### `dependencies` block:
+```groovy
+implementation "rabbi4466.actionsequencer:actionsequencer:0.1.0"
+```
+
 ## 🔧 Key Components
 
 ### `ActionSequencer`
