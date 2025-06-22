@@ -33,13 +33,13 @@ A wrapper around a user-defined action:
 ## ✍️ Example Usage
 
 ```java
-ActionSequencer fsm = new ActionSequencer()
+ActionSequencer actionSequencer = new ActionSequencer()
     .addAction(driveSubsystem, () -> drive.forward(20), 0.9)
     .addAction(slideSubsystem, () -> slide.lower(), 1.0, true);
 
-fsm.start();  // Call once before the main loop
+actionSequencer.start();  // Call once before the main loop
 
-while (opModeIsActive() && fsm.update()) {
+while (opModeIsActive() && actionSequencer.update()) {
     // FSM is still running actions
     // You can do telemetry, background updates, etc.
 }
@@ -51,4 +51,4 @@ while (opModeIsActive() && fsm.update()) {
 Made by  
 **Ari Yellin-Levine**  
 FTC Team **4466 R.A.B.B.I.** 🤖  
-[GitHub Repository](TODO)
+[GitHub Repository](https://github.com/RABBI-4466/ActionSequencer/tree/main)
